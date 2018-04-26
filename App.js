@@ -11,6 +11,8 @@ import {
   Text,
   View
 } from 'react-native';
+// import FCM, {FCMEvent, RemoteNotificationResult, WillPresentNotificationResult, NotificationType} from "react-native-fcm";
+import PushNotificationController from "./PushNotificationController";
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -21,20 +23,20 @@ const instructions = Platform.select({
 
 type Props = {};
 export default class App extends Component<Props> {
+  constructor(props)
+  {
+    super(props)
+  }
+  
+
   render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
-      </View>
-    );
+    return (      
+    <View style={styles.container}>
+      <PushNotificationController />
+      <Text >
+        Welcome to Push Notification for React Native!
+      </Text>
+    </View>)
   }
 }
 
